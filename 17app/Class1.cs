@@ -49,7 +49,28 @@ namespace _17app
             }
         }
         [TestCase]
-        public void 
+        public void StartVideoOnNextPage()
+        {
+            driver.Url = "https://www.spacex.com/";
+            string scroller = "transform: translate3d(0px, -3400px, 0px)";
+            string fd = "scroller";
+            if (IsLoaded("//*[@id=\"hamburger\"]"))
+            {
+                IWebElement element = driver.FindElement(By.XPath("//*[@id=\"hamburger\"]"));
+                element.Click();
+
+                if (IsLoaded("/html/body/div[1]/div[1]/div[5]/div[2]/ul/li[3]/a"))
+                {
+                    IWebElement element1 = driver.FindElement(By.XPath("/html/body/div[1]/div[1]/div[5]/div[2]/ul/li[3]/a"));
+                    element1.Click();
+
+                    IWebElement element2 = driver.FindElement(By.XPath("/html/body/div[1]/div[2]"));
+                    driver.
+                   
+                }
+            }
+            
+        }
         [TearDown]
         public void testEnd()
         {
